@@ -7,6 +7,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MovieReader.h" />
+    <ClInclude Include="expected.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Movies">

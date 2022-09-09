@@ -2,7 +2,7 @@
 
 
 #include "generator.h"
-#include <tl/expected.hpp>
+#include "expected.h"
 
 #include <string>
 #include <fstream>
@@ -13,14 +13,7 @@ namespace ci {
 		std::string Name;
 		int Duration;
 	};
-
-	// customizations of tl::expected
-
-	template<typename T>
-	using expected = tl::expected<T, std::string>;
-
-	using unexpected = tl::unexpected<std::string>;
-
+	
 	class MovieReader
 	{
 	public:

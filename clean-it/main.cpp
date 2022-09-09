@@ -2,15 +2,23 @@
 
 #include <gtest/gtest.h>
 
-TEST(MovieReader, ReadSucceeds)
-{
-	const std::string path = ".\\movies";
+#include <ranges>
 
-	ASSERT_TRUE(std::ranges::all_of(
-		ci::MovieReader::readMovies(path),
-		[](const auto& m)
-		{
-			return m.has_value();
-		}
-	));
+using namespace std::ranges::views;
+using namespace ci;
+
+TEST(MovieReader, ReadMovieSucceeds) {
+	const std::string path = ".\\Movies";
+
+	auto allMovies = expect([&path] {
+		return std::ranges::all_of(
+			MovieReader::readMovies(path),
+			[](const auto& m)
+			{
+				return m.has_value();
+			}
+		);
+		});
+
+	ASSERT_TRUE(allMovies && allMovies.value());
 }

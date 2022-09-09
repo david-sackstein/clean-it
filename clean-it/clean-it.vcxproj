@@ -142,6 +142,7 @@
     <ClCompile Include="MovieReader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="expected.h" />
     <ClInclude Include="MovieReader.h" />
   </ItemGroup>
   <ItemGroup>
