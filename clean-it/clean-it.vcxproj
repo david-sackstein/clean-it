@@ -137,6 +137,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="generator.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovieReader.cpp" />
   </ItemGroup>

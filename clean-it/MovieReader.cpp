@@ -6,22 +6,13 @@
 namespace ci {
 
 	// read all movie files from the folder named path without explicitly throwing.
+	// Note: the directory_iterator may throw on the first iteration of the generator.
 	auto MovieReader::readMovies(
-		const std::string& path) -> expected<std::vector<expected<Movie>>> {
+		const std::string& path) -> generator<expected<Movie>> {
 
-		std::vector<expected<Movie>> movies;
-
-		// use the overload that excepts an error_code. Note: may still throw std::bad_alloc. 
-		std::error_code ec;
-		for (const auto& entry : std::filesystem::directory_iterator(path, ec)) {
-			movies.emplace_back(readMovie(entry.path().string()));
+		for (const auto& entry : std::filesystem::directory_iterator(path)) {
+			co_yield readMovie(entry.path().string());
 		}
-
-		// if an error occurred return unexpected
-		if (ec){
-			return unexpected{ ec.message() };
-		}
-		return movies;
 	}
 
 	// read a movie file and determine its duration without explicitly throwing

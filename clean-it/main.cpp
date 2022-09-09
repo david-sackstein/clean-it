@@ -6,8 +6,11 @@ TEST(MovieReader, ReadSucceeds)
 {
 	const std::string path = ".\\movies";
 
-	const auto movies = ci::MovieReader::readMovies(path);
-
-	ASSERT_TRUE(movies);
-	ASSERT_EQ(3, movies.value().size());
+	ASSERT_TRUE(std::ranges::all_of(
+		ci::MovieReader::readMovies(path),
+		[](const auto& m)
+		{
+			return m.has_value();
+		}
+	));
 }

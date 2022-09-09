@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovieReader.cpp" />
+    <ClCompile Include="generator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MovieReader.h" />

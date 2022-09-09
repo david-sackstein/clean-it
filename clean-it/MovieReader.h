@@ -1,9 +1,10 @@
 #pragma once
 
+
+#include "generator.h"
 #include <tl/expected.hpp>
 
 #include <string>
-#include <vector>
 #include <fstream>
 
 namespace ci {
@@ -24,9 +25,9 @@ namespace ci {
 	{
 	public:
 
-		// read all movies from a folder named path without explicit throw.
+		// read all movies from a folder named path lazily.
 		[[nodiscard]] static auto readMovies(
-			const std::string& path) -> expected<std::vector<expected<Movie>>>;
+			const std::string& path) -> generator<expected<Movie>>;
 
 		// read one movie from a file named fileName without explicit throw.
 		[[nodiscard]] static auto readMovie(
@@ -47,3 +48,4 @@ namespace ci {
 			const std::string& fileLine, const std::string& fileName) -> expected<Movie>;
 	};
 }
+
