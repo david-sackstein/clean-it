@@ -36,7 +36,7 @@ namespace ci {
             }
             else {
                 // if reading the file failed, throw
-            	if (file.bad()) {
+                if (file.bad()) {
                     throw std::runtime_error("error while reading file");
                 }
                 // if reading the line failed, throw

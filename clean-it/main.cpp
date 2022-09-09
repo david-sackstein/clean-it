@@ -1,8 +1,11 @@
+#include <gtest/gtest.h>
+
 #include <vector>
 
 #include "MovieReader.h"
 
-int main()
+TEST(MovieReader, ReadSucceeds)
 {
-	auto movies = ci::readMovies();
+	const auto movies = ci::readMovies();
+	ASSERT_EQ(3, movies.size());
 }
