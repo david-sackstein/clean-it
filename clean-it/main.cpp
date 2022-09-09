@@ -1,8 +1,6 @@
-#include <gtest/gtest.h>
-
-#include <vector>
-
 #include "MovieReader.h"
+
+#include <gtest/gtest.h>
 
 TEST(MovieReader, ReadSucceeds)
 {

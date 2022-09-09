@@ -1,8 +1,8 @@
+#include "MovieReader.h"
+
 #include <filesystem>
 #include <fstream>
 #include <sstream>
-
-#include "MovieReader.h"
 
 namespace ci {
 	Movie readMovieFile(const std::string& fileName);

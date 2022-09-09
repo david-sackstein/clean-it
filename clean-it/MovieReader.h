@@ -1,9 +1,9 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 namespace ci {
-
 	struct Movie
 	{
 		std::string Name;
