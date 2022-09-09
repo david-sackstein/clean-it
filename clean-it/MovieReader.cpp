@@ -36,7 +36,7 @@ namespace ci {
 	// read all movies from a generator eagerly.
 	// Note: may throw on the first iteration of the generator.
 	auto MovieReader::readAvailableMovies(
-		generator<expected<Movie>> generator) -> std::vector<Movie> {
+		cppcoro::generator<expected<Movie>> generator) -> std::vector<Movie> {
 
 		using namespace std::ranges::views;
 
@@ -53,7 +53,7 @@ namespace ci {
 	// read all movie files from the folder named path without explicitly throwing.
 	// Note: the directory_iterator may throw on the first iteration of the generator.
 	auto MovieReader::readMovies(
-		const std::string& path) -> generator<expected<Movie>> {
+		const std::string& path) -> cppcoro::generator<expected<Movie>> {
 
 		for (const auto& entry : std::filesystem::directory_iterator(path)) {
 			co_yield readMovie(entry.path().string());

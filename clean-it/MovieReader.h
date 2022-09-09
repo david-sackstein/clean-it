@@ -1,7 +1,8 @@
 #pragma once
 
-#include "generator.h"
 #include "expected.h"
+
+#include <cppcoro/generator.hpp>
 
 #include <string>
 #include <fstream>
@@ -30,12 +31,12 @@ namespace ci {
 		// read all movies from a generator eagerly.
 		// Note: may throw on the first iteration of the generator.
 		[[nodiscard]] static auto readAvailableMovies(
-			generator<expected<Movie>> generator) -> std::vector<Movie>;
+			cppcoro::generator<expected<Movie>> generator) -> std::vector<Movie>;
 
 		// read all movie files from the folder named path without explicitly throwing.
 		// Note: the directory_iterator may throw on the first iteration of the generator.
 		[[nodiscard]] static auto readMovies(
-			const std::string& path)->generator<expected<Movie>>;
+			const std::string& path) ->cppcoro::generator<expected<Movie>>;
 
 		// opens the file named fileName.
 		[[nodiscard]] static auto openFile(
