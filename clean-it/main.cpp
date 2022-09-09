@@ -7,5 +7,7 @@ TEST(MovieReader, ReadSucceeds)
 	const std::string path = ".\\movies";
 
 	const auto movies = ci::readMovies(path);
-	ASSERT_EQ(3, movies.size());
+
+	ASSERT_TRUE(movies);
+	ASSERT_EQ(3, movies.value().size());
 }
