@@ -10,5 +10,5 @@ namespace ci {
 		int Duration;
 	};
 
-	std::vector<Movie> readMovies();
+	std::vector<Movie> readMovies(const std::string& path);
 }

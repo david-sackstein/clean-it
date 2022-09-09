@@ -5,45 +5,47 @@
 #include "MovieReader.h"
 
 namespace ci {
+	Movie readMovieFile(const std::string& fileName);
 
-    std::vector<Movie> readMovies()
-    {
-        std::vector<Movie> movies;
-        std::string path = ".\\movies";
+	// read all movies from the folder at path
+	std::vector<Movie> readMovies(const std::string& path)
+	{
+		std::vector<Movie> movies;
 
-        for (const auto& entry : std::filesystem::directory_iterator(path)) {
-            // read the movie file and determine its duration.
-            std::ifstream file(entry.path());
+		for (const auto& entry : std::filesystem::directory_iterator(path)) {
+			movies.emplace_back(readMovieFile(entry.path().string()));
+		}
 
-            // open the file
-            std::string name = entry.path().string();
-            if (!file.is_open())
-                throw std::runtime_error("error while opening file");
+		return movies;
+	}
 
-            // read a line
-            std::string line;
-            if (getline(file, line)) {
+	// read a movie file and determine its duration.
+	Movie readMovieFile(const std::string& fileName)
+	{
+		// open the file
+		std::ifstream file(fileName);
+		if (!file.is_open())
+			throw std::runtime_error("error while opening file");
 
-                // parse the line and read the duration
-                std::stringstream linestream(line);
-                int seconds{};
-                linestream >> seconds;
-                if (linestream.fail()) {
-                    throw std::runtime_error("error reading file");
-                }
-                // if successful, store the Movie in the vector
-                movies.emplace_back(entry.path().string(), seconds);
-            }
-            else {
-                // if reading the file failed, throw
-                if (file.bad()) {
-                    throw std::runtime_error("error while reading file");
-                }
-                // if reading the line failed, throw
-                throw std::runtime_error("file has the wrong format");
-            }
-        }
+		// read a line
+		std::string line;
+		if (getline(file, line)) {
 
-        return movies;
-    }
+			// parse the line and read the duration
+			std::stringstream linestream(line);
+			int seconds{};
+			linestream >> seconds;
+			if (linestream.fail()) {
+				throw std::runtime_error("error reading file");
+			}
+			// if successful, store the Movie in the vector
+			return { fileName, seconds };
+		}
+		// if reading the file failed, throw
+		if (file.bad()) {
+			throw std::runtime_error("error while reading file");
+		}
+		// if reading the line failed, throw
+		throw std::runtime_error("file has the wrong format");
+	}
 }
