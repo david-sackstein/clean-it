@@ -1,6 +1,7 @@
 #pragma once
 
 #include "expected.h"
+#include "Movie.h"
 
 #include <cppcoro/generator.hpp>
 
@@ -8,12 +9,7 @@
 #include <fstream>
 
 namespace ci {
-	struct Movie
-	{
-		std::string Name;
-		int Duration;
-	};
-	
+
 	class MovieReader
 	{
 	public:

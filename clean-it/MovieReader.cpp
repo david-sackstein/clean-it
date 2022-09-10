@@ -95,6 +95,6 @@ namespace ci {
 		if (linestream.fail()) {
 			return unexpected{ "error reading file" };
 		}
-		return Movie{ fileName, seconds };
+		return Movie::create(fileName, seconds);
 	}
 }

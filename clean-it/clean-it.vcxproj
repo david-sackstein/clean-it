@@ -142,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="expected.h" />
+    <ClInclude Include="Movie.h" />
     <ClInclude Include="MovieReader.h" />
   </ItemGroup>
   <ItemGroup>
