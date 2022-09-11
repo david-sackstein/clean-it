@@ -13,6 +13,9 @@
     <ClCompile Include="Streamer.cpp">
       <Filter>Streamer</Filter>
     </ClCompile>
+    <ClCompile Include="IOC.cpp">
+      <Filter>IOC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ManualResetEvent.h">
@@ -23,6 +26,9 @@
     </ClInclude>
     <ClInclude Include="Streamer.h">
       <Filter>Streamer</Filter>
+    </ClInclude>
+    <ClInclude Include="IOC.h">
+      <Filter>IOC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +43,9 @@
     </Filter>
     <Filter Include="Streamer">
       <UniqueIdentifier>{750c1e22-e89b-483f-a1e8-accecb2ec01d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IOC">
+      <UniqueIdentifier>{93d2747e-f211-4605-b5d2-9120a48e737a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

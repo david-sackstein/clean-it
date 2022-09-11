@@ -36,6 +36,9 @@
     <ClInclude Include="expected.h">
       <Filter>Utils</Filter>
     </ClInclude>
+    <ClInclude Include="IStreamer.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="VODServer">

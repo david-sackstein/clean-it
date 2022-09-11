@@ -1,39 +1,33 @@
 #include "VODExport.h"
 #include "VODClient.h"
-#include "Streamer.h"
+#include "IOC.h"
 
 #include <gtest/gtest.h>
 
 using namespace ci;
 
+IOC ioc;
+
 TEST(TestServer, GetMovies) {
-	const auto streamer = std::make_shared<Streamer>(10);
-	const auto server = CreateVODServer(streamer);
-	const auto client = std::make_shared<VODClient>(server);
+	const auto client = ioc()->resolve<VODClient>();
 
 	client->TestGetMovies();
 }
 
 TEST(TestServer, Login) {
-	const auto streamer = std::make_shared<Streamer>(10);
-	const auto server = CreateVODServer(streamer);
-	const auto client = std::make_shared<VODClient>(server);
+	const auto client = ioc()->resolve<VODClient>();
 
 	client->TestLogin();
 }
 
 TEST(TestServer, StartStop) {
-	const auto streamer = std::make_shared<Streamer>(10);
-	const auto server = CreateVODServer(streamer);
-	const auto client = std::make_shared<VODClient>(server);
+	const auto client = ioc()->resolve<VODClient>();
 
 	client->TestStartStop();
 }
 
 TEST(TestServer, CompleteDuration) {
-	const auto streamer = std::make_shared<Streamer>(10);
-	const auto server = CreateVODServer(streamer);
-	const auto client = std::make_shared<VODClient>(server);
+	const auto client = ioc()->resolve<VODClient>();
 
 	client->TestCompleteDuration();
 }

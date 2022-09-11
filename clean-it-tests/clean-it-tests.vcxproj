@@ -36,11 +36,13 @@
     <OutDir>$(SolutionDir)\bin\</OutDir>
   </PropertyGroup>
   <ItemGroup>
+    <ClInclude Include="IOC.h" />
     <ClInclude Include="ManualResetEvent.h" />
     <ClInclude Include="Streamer.h" />
     <ClInclude Include="VODClient.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="IOC.cpp" />
     <ClCompile Include="MovieReaderTests.cpp" />
     <ClCompile Include="Streamer.cpp" />
     <ClCompile Include="VODClient.cpp" />
@@ -83,7 +85,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\clean-it;..\..\cppcoro\include;..\..\expected\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\clean-it;..\..\cppcoro\include;..\..\boost_1_80_0;..\..\Hypodermic;..\..\expected\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
