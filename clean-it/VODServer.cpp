@@ -3,15 +3,15 @@
 
 #include <thread>
 #include <condition_variable>
-#include <algorithm>
 
 const std::string MoviesPath = "../Movies";
 
 namespace ci {
 	using namespace std::chrono_literals;
 
-	VODServer::VODServer() :
-		ConsoleLogger(LogLevel::Debug)
+	VODServer::VODServer(std::shared_ptr<IStreamer> streamer) :
+		ConsoleLogger(LogLevel::Debug),
+		_streamer(move(streamer))
 	{}
 
 	VODServer::~VODServer() {
@@ -82,14 +82,7 @@ namespace ci {
 			c->OnPlaying(movie);
 		}
 
-		std::mutex mutex;
-		std::unique_lock lock(mutex);
-
-		std::condition_variable_any().wait_for(
-			lock,
-			token,
-			movie.Duration,
-			[&token] { return token.stop_requested(); });
+		_streamer->Stream(movie, token);
 
 		if (const auto c = _client.lock())
 		{

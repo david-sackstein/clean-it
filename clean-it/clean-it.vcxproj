@@ -146,6 +146,7 @@
     <ClInclude Include="expected.h" />
     <ClInclude Include="VODExport.h" />
     <ClInclude Include="IMovieObserver.h" />
+    <ClInclude Include="IStreamer.h" />
     <ClInclude Include="IVODServer.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Movie.h" />

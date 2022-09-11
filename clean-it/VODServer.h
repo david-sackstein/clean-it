@@ -1,18 +1,19 @@
 #pragma once
 
-#include "VODExport.h"
+#include "IStreamer.h"
 #include "IVODServer.h"
 #include "Logger.h"
 
 #include <memory>
 #include <vector>
 
+
 namespace ci {
 	class VODServer : public IVODServer, public ConsoleLogger
 	{
 	public:
 
-		VODServer();
+		VODServer(std::shared_ptr<IStreamer> streamer);
 		~VODServer() override;
 
 		VODServer(VODServer&& other) noexcept = default;
@@ -36,6 +37,7 @@ namespace ci {
 
 		void doPlay(const Movie&, const std::stop_token& token) const;
 
+		std::shared_ptr<IStreamer> _streamer;
 		std::vector<Movie> _movies;
 		std::weak_ptr<IMovieObserver> _client;
 		std::jthread _playThread;

@@ -37,10 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="ManualResetEvent.h" />
+    <ClInclude Include="Streamer.h" />
     <ClInclude Include="VODClient.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MovieReaderTests.cpp" />
+    <ClCompile Include="Streamer.cpp" />
     <ClCompile Include="VODClient.cpp" />
     <ClCompile Include="VODServerTests.cpp" />
   </ItemGroup>

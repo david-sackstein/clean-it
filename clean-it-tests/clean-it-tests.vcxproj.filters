@@ -10,6 +10,9 @@
     <ClCompile Include="VODServerTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>
+    <ClCompile Include="Streamer.cpp">
+      <Filter>Streamer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ManualResetEvent.h">
@@ -17,6 +20,9 @@
     </ClInclude>
     <ClInclude Include="VODClient.h">
       <Filter>VODClient</Filter>
+    </ClInclude>
+    <ClInclude Include="Streamer.h">
+      <Filter>Streamer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -28,6 +34,9 @@
     </Filter>
     <Filter Include="Tests">
       <UniqueIdentifier>{23182256-1bb7-43fc-9df2-a238ff8f3d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Streamer">
+      <UniqueIdentifier>{750c1e22-e89b-483f-a1e8-accecb2ec01d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
