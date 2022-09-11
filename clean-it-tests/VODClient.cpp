@@ -5,7 +5,7 @@
 using namespace std::chrono_literals;
 using namespace ci;
 
-VODClient::VODClient(std::shared_ptr<VODServer> server) :
+VODClient::VODClient(std::shared_ptr<IVODServer> server) :
 	_server(std::move(server))
 {
 }

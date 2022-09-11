@@ -15,7 +15,7 @@ namespace ci {
 	{}
 
 	VODServer::~VODServer() {
-		Stop();
+		VODServer::Stop();
 	}
 
 	bool VODServer::Connect(std::weak_ptr<IMovieObserver> client)

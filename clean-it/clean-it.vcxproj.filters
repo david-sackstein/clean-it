@@ -7,9 +7,11 @@
     <ClCompile Include="MovieReader.cpp">
       <Filter>MovieReader</Filter>
     </ClCompile>
+    <ClCompile Include="VODExport.cpp">
+      <Filter>Exports</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="expected.h" />
     <ClInclude Include="VODServer.h">
       <Filter>VODServer</Filter>
     </ClInclude>
@@ -19,7 +21,21 @@
     <ClInclude Include="Movie.h">
       <Filter>MovieReader</Filter>
     </ClInclude>
-    <ClInclude Include="VODExport.h" />
+    <ClInclude Include="IMovieObserver.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="IVODServer.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="VODExport.h">
+      <Filter>Exports</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>VODServer</Filter>
+    </ClInclude>
+    <ClInclude Include="expected.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="VODServer">
@@ -27,6 +43,12 @@
     </Filter>
     <Filter Include="MovieReader">
       <UniqueIdentifier>{284f46ae-2756-4faf-86be-442dafccadf3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Exports">
+      <UniqueIdentifier>{8b2c841a-354f-4b7b-aa49-dfb4c1d6d5c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{18cdf334-2831-453b-91fa-3a1d9af1b46d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -138,12 +138,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="VODExport.cpp" />
     <ClCompile Include="MovieReader.cpp" />
     <ClCompile Include="VODServer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="expected.h" />
     <ClInclude Include="VODExport.h" />
+    <ClInclude Include="IMovieObserver.h" />
+    <ClInclude Include="IVODServer.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Movie.h" />
     <ClInclude Include="MovieReader.h" />
     <ClInclude Include="VODServer.h" />

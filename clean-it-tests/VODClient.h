@@ -1,11 +1,11 @@
 #pragma once
 
-#include "VODServer.h"
+#include "VODExport.h"
 #include "ManualResetEvent.h"
 
-#include <memory>
-
 using namespace ci;
+
+#include <memory>
 
 class VODClient :
 	public IMovieObserver,
@@ -13,7 +13,7 @@ class VODClient :
 {
 public:
 
-	VODClient(std::shared_ptr<VODServer>);
+	VODClient(std::shared_ptr<IVODServer>);
 
 	void TestLogin();
 	void TestGetMovies();
@@ -25,7 +25,7 @@ private:
 	void OnPlaying(Movie) override;
 	void OnCompleted(Movie)override;
 
-	std::shared_ptr<VODServer> _server;
+	std::shared_ptr<IVODServer> _server;
 
 	ManualResetEvent _wait_for_started;
 	ManualResetEvent _wait_for_stopped;
