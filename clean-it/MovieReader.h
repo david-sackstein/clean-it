@@ -1,12 +1,14 @@
 #pragma once
 
-#include "expected.h"
+#include "VODExport.h"
 #include "Movie.h"
+#include "expected.h"
 
 #include <cppcoro/generator.hpp>
 
 #include <string>
 #include <fstream>
+
 
 namespace ci {
 
@@ -15,11 +17,11 @@ namespace ci {
 	public:
 
 		// read all available movies from a folder named path eagerly.
-		[[nodiscard]] static auto readAvailableMovies(
+		[[nodiscard]] static auto VODEXPORT readAvailableMovies(
 			const std::string& path) noexcept -> expected<std::vector<Movie>>;
 
 		// read one movie from a file named fileName.
-		[[nodiscard]] static auto readMovie(
+		[[nodiscard]] static auto VODEXPORT readMovie(
 			const std::string& fileName) -> expected<Movie>;
 
 	private:

@@ -8,6 +8,8 @@
 #include <vector>
 #include <cppcoro/generator.hpp>
 
+#include "VODExport.h"
+
 namespace ci {
 	class IMovieObserver
 	{
@@ -55,8 +57,8 @@ namespace ci {
 	{
 	public:
 
-		VODServer();
-		~VODServer();
+		VODEXPORT VODServer();
+		VODEXPORT ~VODServer();
 
 		VODServer(VODServer&& other) noexcept = default;
 		VODServer(const VODServer& other) noexcept = delete;
@@ -64,13 +66,13 @@ namespace ci {
 		VODServer& operator=(VODServer&&) = default;
 		VODServer& operator=(const VODServer&) = delete;
 
-		bool Connect(std::weak_ptr<IMovieObserver>);
-		void Disconnect();
+		bool VODEXPORT Connect(std::weak_ptr<IMovieObserver>);
+		void VODEXPORT Disconnect();
 
-		[[nodiscard]] expected<std::vector<Movie>> GetMovies() const;
+		[[nodiscard]] expected<std::vector<Movie>> VODEXPORT GetMovies() const;
 
-		bool Play(const Movie&);
-		bool Stop();
+		bool VODEXPORT Play(const Movie&);
+		bool VODEXPORT Stop();
 
 	private:
 

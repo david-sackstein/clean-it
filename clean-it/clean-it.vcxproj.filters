@@ -1,58 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="MovieReader.cpp" />
     <ClCompile Include="VODServer.cpp">
       <Filter>VODServer</Filter>
     </ClCompile>
-    <ClCompile Include="MovieReaderTests.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="VODServerTests.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
-    <ClCompile Include="VODClient.cpp">
-      <Filter>VODClient</Filter>
+    <ClCompile Include="MovieReader.cpp">
+      <Filter>MovieReader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MovieReader.h" />
     <ClInclude Include="expected.h" />
-    <ClInclude Include="Movie.h" />
     <ClInclude Include="VODServer.h">
       <Filter>VODServer</Filter>
     </ClInclude>
-    <ClInclude Include="VODClient.h">
-      <Filter>VODClient</Filter>
+    <ClInclude Include="MovieReader.h">
+      <Filter>MovieReader</Filter>
     </ClInclude>
-    <ClInclude Include="ManualResetEvent.h">
-      <Filter>VODClient</Filter>
+    <ClInclude Include="Movie.h">
+      <Filter>MovieReader</Filter>
     </ClInclude>
+    <ClInclude Include="VODExport.h" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Movies">
-      <UniqueIdentifier>{40b1e818-73cb-41bd-bbd0-64f589c32717}</UniqueIdentifier>
-    </Filter>
     <Filter Include="VODServer">
       <UniqueIdentifier>{ea916310-1d15-40bd-8506-cc5810b2d9fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tests">
-      <UniqueIdentifier>{a8801db9-85c4-4840-9612-3f381f592c0c}</UniqueIdentifier>
+    <Filter Include="MovieReader">
+      <UniqueIdentifier>{284f46ae-2756-4faf-86be-442dafccadf3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="VODClient">
-      <UniqueIdentifier>{e1d58b72-1372-4baa-9fa9-a0c695b02946}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="movies\Aladdin.txt">
-      <Filter>Movies</Filter>
-    </Text>
-    <Text Include="movies\Gone With The Wind.txt">
-      <Filter>Movies</Filter>
-    </Text>
-    <Text Include="movies\Harry Potter And The Goblet Of Fire.txt">
-      <Filter>Movies</Filter>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

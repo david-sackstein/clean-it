@@ -5,7 +5,7 @@
 #include <condition_variable>
 #include <algorithm>
 
-const std::string MoviesPath = "./Movies";
+const std::string MoviesPath = "../Movies";
 
 namespace ci {
 	using namespace std::chrono_literals;

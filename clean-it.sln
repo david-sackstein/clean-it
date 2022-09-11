@@ -5,6 +5,15 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clean-it", "clean-it\clean-it.vcxproj", "{D6794942-37B0-4E5B-8890-915A34D15617}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "clean-it-tests", "clean-it-tests\clean-it-tests.vcxproj", "{53E7758F-C9C7-459C-8717-60EEF0AA41E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movies", "Movies", "{C5303E0C-ED8F-4BA2-B483-A89E967C620E}"
+	ProjectSection(SolutionItems) = preProject
+		movies\Aladdin.txt = movies\Aladdin.txt
+		movies\Gone With The Wind.txt = movies\Gone With The Wind.txt
+		movies\Harry Potter And The Goblet Of Fire.txt = movies\Harry Potter And The Goblet Of Fire.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +30,14 @@ Global
 		{D6794942-37B0-4E5B-8890-915A34D15617}.Release|x64.Build.0 = Release|x64
 		{D6794942-37B0-4E5B-8890-915A34D15617}.Release|x86.ActiveCfg = Release|Win32
 		{D6794942-37B0-4E5B-8890-915A34D15617}.Release|x86.Build.0 = Release|Win32
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Debug|x64.ActiveCfg = Debug|x64
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Debug|x64.Build.0 = Debug|x64
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Debug|x86.ActiveCfg = Debug|Win32
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Debug|x86.Build.0 = Debug|Win32
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Release|x64.ActiveCfg = Release|x64
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Release|x64.Build.0 = Release|x64
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Release|x86.ActiveCfg = Release|Win32
+		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

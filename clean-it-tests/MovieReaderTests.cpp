@@ -8,7 +8,7 @@ using namespace std::ranges::views;
 using namespace ci;
 
 TEST(MovieReader, ReadMovieSucceeds) {
-	const std::string path = "./Movies";
+	const std::string path = "../Movies";
 
 	auto allMovies = MovieReader::readAvailableMovies(path);
 

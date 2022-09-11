@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="VODClient.cpp">
+      <Filter>VODClient</Filter>
+    </ClCompile>
+    <ClCompile Include="MovieReaderTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="VODServerTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ManualResetEvent.h">
+      <Filter>VODClient</Filter>
+    </ClInclude>
+    <ClInclude Include="VODClient.h">
+      <Filter>VODClient</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="VODClient">
+      <UniqueIdentifier>{2fbed1d8-393d-4359-91bb-6ca28e0cd624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{23182256-1bb7-43fc-9df2-a238ff8f3d24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

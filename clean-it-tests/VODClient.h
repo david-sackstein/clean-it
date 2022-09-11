@@ -5,28 +5,28 @@
 
 #include <memory>
 
-namespace ci {
-	class VODClient :
-		public IMovieObserver,
-		public std::enable_shared_from_this<VODClient>
-	{
-	public:
+using namespace ci;
 
-		VODClient(std::shared_ptr<VODServer>);
+class VODClient :
+	public IMovieObserver,
+	public std::enable_shared_from_this<VODClient>
+{
+public:
 
-		void TestLogin();
-		void TestGetMovies();
-		void TestStartStop();
-		void TestCompleteDuration();
+	VODClient(std::shared_ptr<VODServer>);
 
-	private:
+	void TestLogin();
+	void TestGetMovies();
+	void TestStartStop();
+	void TestCompleteDuration();
 
-		void OnPlaying(Movie) override;
-		void OnCompleted(Movie)override;
+private:
 
-		std::shared_ptr<VODServer> _server;
+	void OnPlaying(Movie) override;
+	void OnCompleted(Movie)override;
 
-		ManualResetEvent _wait_for_started;
-		ManualResetEvent _wait_for_stopped;
-	};
-}
+	std::shared_ptr<VODServer> _server;
+
+	ManualResetEvent _wait_for_started;
+	ManualResetEvent _wait_for_stopped;
+};

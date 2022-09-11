@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -76,6 +76,7 @@
     <ClangTidyChecks>
     </ClangTidyChecks>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
+    <OutDir>$(SolutionDir)\bin\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -137,30 +138,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="VODClient.cpp" />
-    <ClCompile Include="MovieReaderTests.cpp" />
     <ClCompile Include="MovieReader.cpp" />
     <ClCompile Include="VODServer.cpp" />
-    <ClCompile Include="VODServerTests.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="VODClient.h" />
     <ClInclude Include="expected.h" />
-    <ClInclude Include="ManualResetEvent.h" />
+    <ClInclude Include="VODExport.h" />
     <ClInclude Include="Movie.h" />
     <ClInclude Include="MovieReader.h" />
     <ClInclude Include="VODServer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="movies\Aladdin.txt">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
-    </Text>
-    <Text Include="movies\Gone With The Wind.txt">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
-    </Text>
-    <Text Include="movies\Harry Potter And The Goblet Of Fire.txt">
-      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
-    </Text>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
