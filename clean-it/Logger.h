@@ -1,7 +1,8 @@
 #pragma once
 
+#include "ILogWriter.h"
+
 #include <format>
-#include <iostream>
 
 namespace ci {
 
@@ -12,23 +13,25 @@ namespace ci {
 		Error
 	};
 
-	class ConsoleLogger {
+	class Logger {
 	public:
-		ConsoleLogger(LogLevel level) : 
+		Logger(std::shared_ptr<ILogWriter> writer, LogLevel level) :
+			_writer(move(writer)),
 			_level(level) 
 		{}
 
 		template <typename... Args>
 		void Write(LogLevel level, std::string_view format_str, Args&&... args) {
 			if (level >= _level) {
-				std::cout << std::vformat(
+				_writer->Write(std::vformat(
 					format_str, 
-					std::make_format_args(std::forward<Args>(args)...));
+					std::make_format_args(std::forward<Args>(args)...)));
 			}
 		}
 
 	private:
 
+		std::shared_ptr<ILogWriter> _writer;
 		LogLevel _level;
 	};
 }

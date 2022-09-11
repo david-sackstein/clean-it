@@ -7,13 +7,15 @@
 #include <memory>
 #include <vector>
 
-
 namespace ci {
-	class VODServer : public IVODServer, public ConsoleLogger
+	class VODServer : public IVODServer
 	{
 	public:
 
-		VODServer(std::shared_ptr<IStreamer> streamer);
+		VODServer(
+			std::shared_ptr<IStreamer> streamer, 
+			std::shared_ptr<ILogWriter> logWriter);
+
 		~VODServer() override;
 
 		VODServer(VODServer&& other) noexcept = default;
@@ -37,6 +39,7 @@ namespace ci {
 
 		void doPlay(const Movie&, const std::stop_token& token) const;
 
+		Logger _logger;
 		std::shared_ptr<IStreamer> _streamer;
 		std::vector<Movie> _movies;
 		std::weak_ptr<IMovieObserver> _client;

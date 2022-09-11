@@ -9,8 +9,11 @@ const std::string MoviesPath = "../Movies";
 namespace ci {
 	using namespace std::chrono_literals;
 
-	VODServer::VODServer(std::shared_ptr<IStreamer> streamer) :
-		ConsoleLogger(LogLevel::Debug),
+	VODServer::VODServer(
+		std::shared_ptr<IStreamer> streamer, 
+		std::shared_ptr<ILogWriter> logWriter)
+	:
+		_logger(move(logWriter), LogLevel::Debug),
 		_streamer(move(streamer))
 	{}
 
@@ -21,14 +24,14 @@ namespace ci {
 	bool VODServer::Connect(std::weak_ptr<IMovieObserver> client)
 	{
 		if (_isConnected) {
-			Write(LogLevel::Warning, "Already connected");
+			_logger.Write(LogLevel::Warning, "Already connected");
 			return false;
 		}
 
 		_client = std::move(client);
 		_isConnected = true;
 
-		Write(LogLevel::Info, "Connected");
+		_logger.Write(LogLevel::Info, "Connected");
 
 		return true;
 	}
