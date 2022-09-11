@@ -15,7 +15,7 @@ namespace ci {
 
 	class Logger {
 	public:
-		Logger(std::shared_ptr<ILogWriter> writer, LogLevel level) :
+		Logger(std::shared_ptr<ILogWriter> writer, LogLevel level = LogLevel::Error) :
 			_writer(move(writer)),
 			_level(level) 
 		{}

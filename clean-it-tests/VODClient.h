@@ -2,6 +2,7 @@
 
 #include "VODExport.h"
 #include "ManualResetEvent.h"
+#include "Logger.h"
 
 using namespace ci;
 
@@ -13,7 +14,9 @@ class VODClient :
 {
 public:
 
-	VODClient(std::shared_ptr<IVODServer>);
+	VODClient(
+		std::shared_ptr<IVODServer>, 
+		std::shared_ptr<Logger> logger);
 
 	void TestLogin();
 	void TestGetMovies();
@@ -26,6 +29,7 @@ private:
 	void OnCompleted(Movie)override;
 
 	std::shared_ptr<IVODServer> _server;
+	std::shared_ptr<Logger> _logger;
 
 	ManualResetEvent _wait_for_started;
 	ManualResetEvent _wait_for_stopped;
