@@ -137,13 +137,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="VODClient.cpp" />
+    <ClCompile Include="MovieReaderTests.cpp" />
     <ClCompile Include="MovieReader.cpp" />
+    <ClCompile Include="VODServer.cpp" />
+    <ClCompile Include="VODServerTests.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="VODClient.h" />
     <ClInclude Include="expected.h" />
+    <ClInclude Include="ManualResetEvent.h" />
     <ClInclude Include="Movie.h" />
     <ClInclude Include="MovieReader.h" />
+    <ClInclude Include="VODServer.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="movies\Aladdin.txt">
