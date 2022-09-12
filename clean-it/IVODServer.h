@@ -2,11 +2,11 @@
 
 #include "IMovieObserver.h"
 
-#include <memory>
-#include <vector>
+import <memory>;
+import <vector>;
 
 namespace ci {
-	class IVODServer																	 // NOLINT(cppcoreguidelines-special-member-functions)
+	class IVODServer // NOLINT(cppcoreguidelines-special-member-functions)
 	{
 	public:
 		virtual ~IVODServer() = default;

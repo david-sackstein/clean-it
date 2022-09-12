@@ -4,7 +4,7 @@
 #include "Streamer.h"
 #include "Logger.h"
 
-#include <Hypodermic/ContainerBuilder.h>
+#include "Hypodermic/ContainerBuilder.h"
 
 class ConsoleWriter : public ci::ILogWriter
 {

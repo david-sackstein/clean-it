@@ -4,8 +4,8 @@
 #include "IVODServer.h"
 #include "Logger.h"
 
-#include <memory>
-#include <vector>
+import <memory>;
+import <vector>;
 
 namespace ci {
 	class VODServer : public IVODServer

@@ -1,9 +1,9 @@
 #pragma once
 
-#include <tl/expected.hpp>
+import <tl/expected.hpp>;
 
-#include <string>
-#include <type_traits>
+import <string>;
+import <type_traits>;
 
 namespace ci {
 	template<typename T>

@@ -2,7 +2,7 @@
 
 #include "expected.h"
 
-#include <string>
+import <string>;
 #include <chrono>
 
 namespace ci {

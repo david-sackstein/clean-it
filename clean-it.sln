@@ -14,6 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Movies", "Movies", "{C5303E
 		movies\Harry Potter And The Goblet Of Fire.txt = movies\Harry Potter And The Goblet Of Fire.txt
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "header-unit-standard", "header-unit-standard\header-unit-standard.vcxproj", "{9331268F-D382-4D54-A7AF-41F7A975015F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "header-unit-third-party", "header-unit-third-party\header-unit-third-party.vcxproj", "{581C37CA-4F65-40BF-B718-B442F894A59F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -38,6 +42,22 @@ Global
 		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Release|x64.Build.0 = Release|x64
 		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Release|x86.ActiveCfg = Release|Win32
 		{53E7758F-C9C7-459C-8717-60EEF0AA41E9}.Release|x86.Build.0 = Release|Win32
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Debug|x64.ActiveCfg = Debug|x64
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Debug|x64.Build.0 = Debug|x64
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Debug|x86.ActiveCfg = Debug|Win32
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Debug|x86.Build.0 = Debug|Win32
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Release|x64.ActiveCfg = Release|x64
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Release|x64.Build.0 = Release|x64
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Release|x86.ActiveCfg = Release|Win32
+		{9331268F-D382-4D54-A7AF-41F7A975015F}.Release|x86.Build.0 = Release|Win32
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Debug|x64.ActiveCfg = Debug|x64
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Debug|x64.Build.0 = Debug|x64
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Debug|x86.ActiveCfg = Debug|Win32
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Debug|x86.Build.0 = Debug|Win32
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Release|x64.ActiveCfg = Release|x64
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Release|x64.Build.0 = Release|x64
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Release|x86.ActiveCfg = Release|Win32
+		{581C37CA-4F65-40BF-B718-B442F894A59F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

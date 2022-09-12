@@ -1,12 +1,12 @@
 #pragma once
 
+import <memory>;
+
 #include "VODExport.h"
 #include "ManualResetEvent.h"
 #include "Logger.h"
 
 using namespace ci;
-
-#include <memory>
 
 class VODClient :
 	public IMovieObserver,

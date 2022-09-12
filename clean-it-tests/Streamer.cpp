@@ -1,6 +1,6 @@
 #include "Streamer.h"
 
-#include <condition_variable>
+import <condition_variable>;
 
 Streamer::Streamer(int speedUp) :
 	_speedUp(speedUp)

@@ -2,7 +2,6 @@
 
 #include "VODClient.h"
 
-using namespace std::chrono_literals;
 using namespace ci;
 
 VODClient::VODClient(

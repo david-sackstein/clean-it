@@ -4,7 +4,7 @@
 #include "IStreamer.h"
 #include "ILogWriter.h"
 
-#include <memory>
+import <memory>;
 
 #define VODEXPORT __declspec(dllexport)
 

@@ -3,7 +3,7 @@
 #include "Movie.h"
 
 namespace ci {
-	class IMovieObserver                              // NOLINT(cppcoreguidelines-special-member-functions)
+	class IMovieObserver // NOLINT(cppcoreguidelines-special-member-functions)
 	{
 	public:
 		virtual ~IMovieObserver() = default;

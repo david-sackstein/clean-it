@@ -39,9 +39,6 @@
     <ClInclude Include="IStreamer.h">
       <Filter>Exports</Filter>
     </ClInclude>
-    <ClInclude Include="ILogWriter.h">
-      <Filter>VODServer</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="VODServer">

@@ -1,8 +1,8 @@
 #include "VODServer.h"
 #include "MovieReader.h"
 
-#include <thread>
-#include <condition_variable>
+import <thread>;
+import <condition_variable>;
 
 const std::string MoviesPath = "../Movies";
 

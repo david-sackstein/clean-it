@@ -21,9 +21,10 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d6794942-37b0-4e5b-8890-915a34d15617}</ProjectGuid>
-    <RootNamespace>cleanit</RootNamespace>
+    <ProjectGuid>{581c37ca-4f65-40bf-b718-b442f894a59f}</ProjectGuid>
+    <RootNamespace>thirdpartyheaderunit</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>header-unit-third-party</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -40,7 +41,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -70,14 +71,6 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <EnableClangTidyCodeAnalysis>false</EnableClangTidyCodeAnalysis>
-    <ClangTidyChecks>
-    </ClangTidyChecks>
-    <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
-    <OutDir>$(SolutionDir)\bin\</OutDir>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -113,10 +106,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <SupportJustMyCode>false</SupportJustMyCode>
-      <AdditionalIncludeDirectories>..\..\cppcoro\include;..\..\expected\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <EnableModules>true</EnableModules>
-      <DisableSpecificWarnings>5050</DisableSpecificWarnings>
+      <AdditionalIncludeDirectories>..\..\boost_1_80_0;..\..\expected\include;..\..\Hypodermic;..\..\cppcoro\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,31 +130,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="VODExport.cpp" />
-    <ClCompile Include="MovieReader.cpp" />
-    <ClCompile Include="VODServer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="expected.h" />
-    <ClInclude Include="VODExport.h" />
-    <ClInclude Include="IMovieObserver.h" />
-    <ClInclude Include="IStreamer.h" />
-    <ClInclude Include="IVODServer.h" />
-    <ClInclude Include="Logger.h" />
-    <ClInclude Include="Movie.h" />
-    <ClInclude Include="MovieReader.h" />
-    <ClInclude Include="VODServer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\header-unit-standard\header-unit-standard.vcxproj">
-      <Project>{9331268f-d382-4d54-a7af-41f7a975015f}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\header-unit-third-party\header-unit-third-party.vcxproj">
-      <Project>{581c37ca-4f65-40bf-b718-b442f894a59f}</Project>
-    </ProjectReference>
+    <ClCompile Include="header-unit.ixx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

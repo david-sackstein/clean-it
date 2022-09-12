@@ -1,8 +1,7 @@
 #pragma once
-#pragma once
 
-#include <mutex>
-#include <condition_variable>
+import <mutex>;
+import <condition_variable>;
 
 class ManualResetEvent
 {

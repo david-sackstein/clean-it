@@ -6,8 +6,8 @@
 
 #include <cppcoro/generator.hpp>
 
-#include <string>
-#include <fstream>
+import <string>;
+import <fstream>;
 
 
 namespace ci {
