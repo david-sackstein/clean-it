@@ -55,24 +55,7 @@ namespace ci {
 
 		_playThread = std::jthread([this, movie](const std::stop_token& token)
 			{
-				if (const auto c = _client.lock())
-				{
-					c->OnPlaying(movie);
-				}
-
-				std::mutex mutex;
-				std::unique_lock lock(mutex);
-
-				std::condition_variable_any().wait_for(
-					lock,
-					token,
-					movie.Duration,
-					[&token] { return token.stop_requested(); });
-
-				if (const auto c = _client.lock())
-				{
-					c->OnCompleted(movie);
-				}
+				doPlay(movie, token);
 			});
 
 		_isPlaying = true;
@@ -90,5 +73,27 @@ namespace ci {
 
 		_isPlaying = false;
 		return true;
+	}
+
+	void VODServer::doPlay(const Movie& movie, const std::stop_token& token) const {
+
+		if (const auto c = _client.lock())
+		{
+			c->OnPlaying(movie);
+		}
+
+		std::mutex mutex;
+		std::unique_lock lock(mutex);
+
+		std::condition_variable_any().wait_for(
+			lock,
+			token,
+			movie.Duration,
+			[&token] { return token.stop_requested(); });
+
+		if (const auto c = _client.lock())
+		{
+			c->OnCompleted(movie);
+		}
 	}
 }

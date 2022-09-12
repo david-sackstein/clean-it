@@ -77,10 +77,10 @@ namespace ci {
 		bool _isConnected{};
 		bool _isPlaying{};
 
+		void doPlay(const Movie&, const std::stop_token& token) const;
+
 		std::vector<Movie> _movies;
-
 		std::weak_ptr<IMovieObserver> _client;
-
 		std::jthread _playThread;
 	};
 }
