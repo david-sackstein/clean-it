@@ -8,17 +8,9 @@ using namespace std::ranges::views;
 using namespace ci;
 
 TEST(MovieReader, ReadMovieSucceeds) {
-	const std::string path = ".\\Movies";
+	const std::string path = "./Movies";
 
-	auto allMovies = expect([&path] {
-		return std::ranges::all_of(
-			MovieReader::readMovies(path),
-			[](const auto& m)
-			{
-				return m.has_value();
-			}
-		);
-		});
+	auto allMovies = MovieReader::readAvailableMovies(path);
 
-	ASSERT_TRUE(allMovies && allMovies.value());
+	ASSERT_TRUE(allMovies && allMovies->size() == 3);
 }

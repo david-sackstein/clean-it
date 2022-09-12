@@ -1,21 +1,22 @@
 #include "MovieReader.h"
 
 #include <filesystem>
+#include <ranges>
 #include <sstream>
 
 namespace ci {
 
-	// read all movie files from the folder named path without explicitly throwing.
-	// Note: the directory_iterator may throw on the first iteration of the generator.
-	auto MovieReader::readMovies(
-		const std::string& path) -> generator<expected<Movie>> {
+	// read all movie files from the folder named path eagerly.
+	auto MovieReader::readAvailableMovies(
+		const std::string& path) noexcept -> expected<std::vector<Movie>> {
 
-		for (const auto& entry : std::filesystem::directory_iterator(path)) {
-			co_yield readMovie(entry.path().string());
-		}
+		return expect([&] 
+		{
+			return readAvailableMovies(readMovies(path));
+		});
 	}
 
-	// read a movie file and determine its duration without explicitly throwing
+	// read one movie from a file named fileName.
 	auto MovieReader::readMovie(
 		const std::string& fileName) -> expected<Movie> {
 
@@ -32,9 +33,36 @@ namespace ci {
 				});
 	}
 
-	// opens the file without explicit throw
+	// read all movies from a generator eagerly.
+	// Note: may throw on the first iteration of the generator.
+	auto MovieReader::readAvailableMovies(
+		generator<expected<Movie>> generator) -> std::vector<Movie> {
+
+		using namespace std::ranges::views;
+
+		auto movies = common(generator) |
+			filter([](const expected<Movie>& e) { return e.has_value(); }) |
+			transform([](const expected<Movie>& e) { return e.value<Movie>(); });
+
+		std::vector<Movie> movieVec{};
+		std::ranges::copy(movies, std::back_inserter(movieVec));
+
+		return movieVec;
+	}
+
+	// read all movie files from the folder named path without explicitly throwing.
+	// Note: the directory_iterator may throw on the first iteration of the generator.
+	auto MovieReader::readMovies(
+		const std::string& path) -> generator<expected<Movie>> {
+
+		for (const auto& entry : std::filesystem::directory_iterator(path)) {
+			co_yield readMovie(entry.path().string());
+		}
+	}
+
+	// opens the file named fileName.
 	auto MovieReader::openFile(
-		const std::string& fileName) -> expected<std::ifstream> {
+		const std::string& fileName) -> expected<std::ifstream>{
 
 		std::ifstream file(fileName);
 		if (!file.is_open()) {
@@ -43,9 +71,9 @@ namespace ci {
 		return file;
 	}
 
-	// read the first line in the file without explicit throw
+	// read a line from the file.
 	auto MovieReader::readLine(
-		std::ifstream& file) -> expected<std::string> {
+		std::ifstream& file) -> expected<std::string>  {
 
 		std::string line{};
 		if (!getline(file, line)) {
@@ -57,7 +85,7 @@ namespace ci {
 		return line;
 	}
 
-	// read the movie file and determine its duration without explicit throw
+	// parse the first line in the file to determine its duration.
 	auto MovieReader::parseMovie(
 		const std::string& line, const std::string& fileName) -> expected<Movie> {
 
