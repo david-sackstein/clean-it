@@ -77,6 +77,7 @@
     </ClangTidyChecks>
     <EnableMicrosoftCodeAnalysis>false</EnableMicrosoftCodeAnalysis>
     <OutDir>$(SolutionDir)\bin\</OutDir>
+    <AllProjectBMIsArePublic>true</AllProjectBMIsArePublic>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="VODExport.cpp" />
     <ClCompile Include="MovieReader.cpp" />
+    <ClCompile Include="VODModule.ixx" />
     <ClCompile Include="VODServer.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "IVODServer.h"
+import VOD;
+
 #include "Streamer.h"
-#include "Logger.h"
 
 #include "Hypodermic/ContainerBuilder.h"
 

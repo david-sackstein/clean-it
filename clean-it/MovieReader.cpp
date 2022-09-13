@@ -1,8 +1,12 @@
+module;
+
 #include "MovieReader.h"
 
 #include <filesystem>
 #include <ranges>
 #include <sstream>
+
+module VOD;
 
 namespace ci {
 

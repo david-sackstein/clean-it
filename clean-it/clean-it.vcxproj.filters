@@ -10,6 +10,9 @@
     <ClCompile Include="VODExport.cpp">
       <Filter>Exports</Filter>
     </ClCompile>
+    <ClCompile Include="VODModule.ixx">
+      <Filter>Exports</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VODServer.h">

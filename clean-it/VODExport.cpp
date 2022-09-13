@@ -1,5 +1,9 @@
+module;
+
 #include "VODExport.h"
 #include "VODServer.h"
+
+module VOD;
 
 namespace ci {
 	std::shared_ptr<IVODServer> CreateVODServer(

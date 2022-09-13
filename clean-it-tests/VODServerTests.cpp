@@ -1,4 +1,5 @@
-#include "VODExport.h"
+import VOD;
+
 #include "VODClient.h"
 #include "IOC.h"
 

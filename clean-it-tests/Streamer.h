@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IStreamer.h"
+import VOD;
 
 class Streamer : public ci::IStreamer
 {

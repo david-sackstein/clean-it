@@ -1,6 +1,7 @@
-#include "Streamer.h"
-
+import VOD;
 import <condition_variable>;
+
+#include "Streamer.h"
 
 Streamer::Streamer(int speedUp) :
 	_speedUp(speedUp)

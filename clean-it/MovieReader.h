@@ -9,7 +9,6 @@
 import <string>;
 import <fstream>;
 
-
 namespace ci {
 
 	class MovieReader
@@ -17,11 +16,11 @@ namespace ci {
 	public:
 
 		// read all available movies from a folder named path eagerly.
-		[[nodiscard]] static auto VODEXPORT readAvailableMovies(
+		[[nodiscard]] static auto readAvailableMovies(
 			const std::string& path) noexcept -> expected<std::vector<Movie>>;
 
 		// read one movie from a file named fileName.
-		[[nodiscard]] static auto VODEXPORT readMovie(
+		[[nodiscard]] static auto readMovie(
 			const std::string& fileName) -> expected<Movie>;
 
 	private:

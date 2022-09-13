@@ -4,9 +4,6 @@
     <ClCompile Include="VODClient.cpp">
       <Filter>VODClient</Filter>
     </ClCompile>
-    <ClCompile Include="MovieReaderTests.cpp">
-      <Filter>Tests</Filter>
-    </ClCompile>
     <ClCompile Include="VODServerTests.cpp">
       <Filter>Tests</Filter>
     </ClCompile>

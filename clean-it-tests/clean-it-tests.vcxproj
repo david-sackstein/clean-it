@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IOC.cpp" />
-    <ClCompile Include="MovieReaderTests.cpp" />
     <ClCompile Include="Streamer.cpp" />
     <ClCompile Include="VODClient.cpp" />
     <ClCompile Include="VODServerTests.cpp" />

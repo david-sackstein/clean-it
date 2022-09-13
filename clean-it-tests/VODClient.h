@@ -1,12 +1,13 @@
 #pragma once
 
 import <memory>;
+import VOD;
 
-#include "VODExport.h"
 #include "ManualResetEvent.h"
 #include "Logger.h"
 
 using namespace ci;
+using namespace std::chrono_literals;
 
 class VODClient :
 	public IMovieObserver,

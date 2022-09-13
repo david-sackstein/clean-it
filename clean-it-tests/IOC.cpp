@@ -1,5 +1,6 @@
+import VOD;
+
 #include "IOC.h"
-#include "VODExport.h"
 
 using namespace Hypodermic;
 
