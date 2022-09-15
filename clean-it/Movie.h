@@ -28,6 +28,9 @@ namespace ci {
 
 	private:
 
+		// The default ctor is deleted.
+		// All other special functions are defaulted and meet the invariant if their argument does,
+		// so they do not need to be redefined.
 		Movie(std::string name, std::chrono::seconds seconds) :
 			Name(std::move(name)),
 			Duration(seconds) {
